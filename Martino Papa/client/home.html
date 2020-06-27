@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Legislature Repubblica Italiana</title>
+    <link rel="shortcut icon" href="img/logo.png" />
+    <script src="connection.js"></script>
+    <script src="script.js"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload='location.href="#home"'>
+    <!--<button onclick="Query('select * from Parlamentare LIMIT 20')">RUN</button>-->
+    <div class="section" id="home">
+        <div class="center">
+            <img src="img/logo.png">
+            <h1><span id="green">legislature</span> <span id="white">Repubblica</span> <span id="red">italiana</span>
+            </h1>
+        </div>
+        <div class="navigazione">
+            <a href="#deputati">Deputati</a>
+            <a href="#senatori">Senatori</a>
+            <a href="#legge">Leggi</a>
+            <a href="#query">Avanzate</a>
+        </div>
+    </div>
+    <div id="deputati" class="section">
+        <div class="ricerca">
+            <h1>Deputati</h1>
+            <select id="collegiDeputati">
+
+            </select>
+            <select id="legislature">
+            </select>
+            <button onclick="trovaDeputato()">Trova</button>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>nome</th>
+                        <th>cognome</th>
+                        <th>partito</th>
+                        <th>collegio</th>
+                        <th>legislatura</th>
+                    </tr>
+                </thead>
+                <tbody id="deputatiContainer">
+                </tbody>
+            </table>
+        </div>
+        <div class="home">
+            <a href="#home">Home</a>
+        </div>
+    </div>
+    <div id="senatori" class="section">
+        <div class="ricerca">
+            <h1>Senatori</h1>
+            <select id="collegiSen">
+
+            </select>
+            <select id="legislatureSen">
+            </select>
+            <button onclick="trovaSenatore()">Trova</button>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>nome</th>
+                        <th>cognome</th>
+                        <th>partito</th>
+                        <th>collegio</th>
+                        <th>legislatura</th>
+                    </tr>
+                </thead>
+                <tbody id="senatoriContainer">
+                </tbody>
+            </table>
+        </div>
+        <div class="home">
+            <a href="#home">Home</a>
+        </div>
+    </div>
+    <div id="legge" class="section">
+        <div class="ricerca">
+            <h1>Leggi</h1>
+            <select id="legislatureLeg">
+            </select>
+            <button onclick="trovaLegge()">Trova</button>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>codice</th>
+                        <th>titolo</th>
+                        <th>approvazione camera</th>
+                        <th>approvazione senato</th>
+                        <th>legislatura</th>
+                    </tr>
+                </thead>
+                <tbody id="leggiContainer">
+                </tbody>
+            </table>
+        </div>
+        <div class="home">
+            <a href="#home">Home</a>
+        </div>
+    </div>
+    <div id="query" class="section">
+        <div class="ricerca">
+            <h1>Opzionalità avanzate</h1>
+            <textarea id="querytxt">select * from parlamentare LIMIT 10</textarea><br>
+            <button onclick="freeQuery()" id="buttonQuery">RUN</button>
+        </div>
+        <div id="queryTableContainer">
+            <table id="queryTable">
+                <thead>
+                    <tr id="intestazioneQuery">
+                    </tr>
+                </thead>
+                <tbody id="containerQuery">
+                </tbody>
+            </table>
+        </div>
+        <div class="home">
+            <a href="#home">Home</a>
+        </div>
+    </div>
+
+</body>
+</body>
+
+</html>
